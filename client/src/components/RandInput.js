@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, Alert, Container, FormGroup, Label, Input } from 'reactstrap'
+import Axios from 'axios';
+import { BASE_URL } from '../constants';
 
 class RandInput extends Component{
     constructor(props){
@@ -16,10 +18,16 @@ class RandInput extends Component{
         const data = {
             "text": formdata.get('text')
         }
-        console.log(data);     
-        this.setState({
-            result: data.text
-        })   
+        Axios.post(BASE_URL+'/user-input/', data)
+            .then(function(response){
+                this.setState({
+                    result: response.data.message.toString()
+                })  
+                console.log(response.data.message) 
+            }.bind(this))
+            .catch(function(error){
+                console.log(error);
+            }.bind(this))        
     }
 
     render(){

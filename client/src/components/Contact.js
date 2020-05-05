@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Form, Alert, Container, FormGroup, Label, Input } from 'reactstrap'
+import { BASE_URL } from '../constants'
+import Axios from 'axios';
+
 
 class Contact extends Component{
     constructor(props){
@@ -17,8 +20,17 @@ class Contact extends Component{
             "name": formdata.get('name'),
             "number": formdata.get('number')
         }
-        this.setState({submitSuccess: true});
-        document.getElementById("contact-form").reset();
+        console.log(data);
+        Axios.post(BASE_URL+'/contact/', data)
+            .then(function(response){
+                this.setState({submitSuccess: true});
+                console.log(response);
+            }.bind(this))
+            .catch(function(error){
+                console.log(error);
+            }.bind(this))
+            document.getElementById("contact-form").reset();
+        
     }
     render(){
         const submitSuccess = this.state.submitSuccess;
