@@ -4,8 +4,11 @@ import { Button, Container, Table } from 'reactstrap';
 import axios from 'axios';
 import { API_KEY } from '../constants'
 
-var row = [];
+// This is the Data Component, which gets live stock data from the AlphaVantage api. It is currently set
+// to get data for the IBM stock at 5 minute intervals. After clicking the button, a table should pop up with
+// all the data.
 
+var row = [];
 
 class Data extends Component{
     constructor(props){
@@ -36,7 +39,8 @@ class Data extends Component{
         return(
             <div className="Data">
                 <Container>
-                    <Button outline color="info" onClick={this.clickHandler}>Click Here</Button>
+                    <p>Clicking this button will fetch the latest 100 stock prices from IBM at intervals of 5 minutes. The data will take about a second to format into the table below.</p>
+                    <Button className="mb-2" outline color="info" onClick={this.clickHandler}>Click Here</Button>
                     <Table dark>
                         <thead>
                             <tr>

@@ -2,4 +2,6 @@
 
 // Server url
 export const BASE_URL = "http://localhost:8000";
+
+// AlphaVantage API key
 export const API_KEY = "GBFOSLAW96A5TKA5";

@@ -3,6 +3,9 @@ import { Button, Form, Alert, Container, FormGroup, Label, Input } from 'reactst
 import Axios from 'axios';
 import { BASE_URL } from '../constants';
 
+// This is the Input Component, where the user inputs text into an input box and upon submit,
+// the server will either return true, if input was Foo or Bar, or false otherwise.
+
 class RandInput extends Component{
     constructor(props){
         super(props);

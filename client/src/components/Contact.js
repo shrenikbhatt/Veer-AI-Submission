@@ -3,6 +3,8 @@ import { Button, Form, Alert, Container, FormGroup, Label, Input } from 'reactst
 import { BASE_URL } from '../constants'
 import Axios from 'axios';
 
+// This is the Contact component, which allows user to enter a name and phone number
+// which is then sent to PostgreSQL database through Axios (AJAX call).
 
 class Contact extends Component{
     constructor(props){
@@ -49,6 +51,7 @@ class Contact extends Component{
                             <FormGroup>
                                 <Label for="number">Contact Number</Label>
                                 <Input type="tel" required name="number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                                <p>Format: 123-456-7890 (include the dashes)</p>
                             </FormGroup>
                             <Button outline color="info">Submit</Button>
                         </Form>

@@ -18,11 +18,12 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from restAPI import views
 
-router = DefaultRouter()
-router.register(r'contact', views.ContactViewSet)
+# router = DefaultRouter()
+# router.register(r'contact', views.ContactViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('user-input/', views.random_text)
+    path('user-input/', views.random_text),
+    path('contact/', views.contact),
 ]
