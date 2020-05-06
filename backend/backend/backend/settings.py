@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = 'h_-_&#6401ys6rmzt=ng-1h6ho*v^ljku7@u5mwik6nbw!e%jj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'veer-ai-submission.herokuapp.com']
 
 
 # Application definition
@@ -93,6 +94,8 @@ DATABASES = {
         'PORT': '5432' #default
     }
 }
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require = True)
 
 
 # Password validation
