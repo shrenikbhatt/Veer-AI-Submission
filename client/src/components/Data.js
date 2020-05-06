@@ -8,6 +8,8 @@ import { API_KEY } from '../constants'
 // to get data for the IBM stock at 5 minute intervals. After clicking the button, a table should pop up with
 // all the data.
 
+// This component makes an AJAX call using axios to the designated url and then maps the reponse data to a table.
+
 var row = [];
 
 class Data extends Component{

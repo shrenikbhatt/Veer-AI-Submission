@@ -6,6 +6,8 @@ import Axios from 'axios';
 // This is the Contact component, which allows user to enter a name and phone number
 // which is then sent to PostgreSQL database through Axios (AJAX call).
 
+// Button click (or pressing enter) will call the submit handler, which extracts form data and posts it to the designated url.
+
 class Contact extends Component{
     constructor(props){
         super(props);

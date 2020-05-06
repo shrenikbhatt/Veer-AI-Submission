@@ -3,6 +3,8 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import { Link } from 'react-router-dom'
 
 // This is the Navbar component, where the user is able to switch between the three pages on the react app
+// The Navbar is always collapsed, and can be expanded by clicking the toggle on the top right. React-routing enables
+// page transitions without having to reload the whole page, and rather just changes the component on the page.
 
 const Navigation = (props) => {
   const [collapsed, setCollapsed] = useState(true);

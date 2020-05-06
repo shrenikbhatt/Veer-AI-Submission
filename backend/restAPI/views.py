@@ -8,6 +8,7 @@ from .models import Contact
 
 # Create your views here.
 
+# Contact view has two methods, GET and POST. This is for the contact page.
 @api_view(['GET', 'POST'])
 def contact(request):
     if (request.method == 'GET'):
@@ -22,6 +23,7 @@ def contact(request):
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
+# Random_text view has only a post method, and will return true or false depending on input (made case sensitive).
 @api_view(['POST'])
 def random_text(request):
     if (request.method == 'POST'):

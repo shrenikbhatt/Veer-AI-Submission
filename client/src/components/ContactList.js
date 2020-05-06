@@ -3,6 +3,11 @@ import { Container, Table, Row } from 'reactstrap'
 import { BASE_URL } from '../constants'
 import Axios from 'axios';
 
+
+// This component lists the posted data from the contact page, arranged into a table ordered from oldest to newest.
+// This works by making an AJAX call through axios that gets the data at the designated url and then maps the data to rows
+// on a table.
+
 var list = [];
 
 class ContactList extends Component{

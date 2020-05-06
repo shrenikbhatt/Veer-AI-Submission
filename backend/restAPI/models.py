@@ -9,10 +9,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
-
-# Model for random user input
-# class UserInput(models.Model):
-#     text = models.CharField(max_length = 10, default = ' ')
-
-#     def __str__(self):
-#         return self.name

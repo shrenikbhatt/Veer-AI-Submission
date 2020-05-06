@@ -37,11 +37,12 @@ class RandInput extends Component{
         return(
             <div className="RandInput">
                 <Container>
-                    <p>{this.state.result}</p>
+                    
                     <Form onSubmit={this.submitHandler} id="input-form">
                         <FormGroup>
-                            <Label for="text">Input Text</Label>
+                            <Label for="text">Input Text (case sensitive)</Label>
                             <Input type="text" required name="text" />
+                            <p>{this.state.result}</p>
                         </FormGroup>
                         <Button outline color="info">Submit</Button>
                     </Form>
